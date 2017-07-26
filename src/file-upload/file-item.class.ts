@@ -32,10 +32,10 @@ export class FileItem {
     this.file = new FileLikeObject(some);
     this._file = some;
     if (uploader.options) {
-      this.method = uploader.options.method || 'POST';
-      this.alias = uploader.options.itemAlias || 'file';
+      this.method = options.method || uploader.options.method || 'POST';
+      this.alias = options.itemAlias || uploader.options.itemAlias || 'file';
     }
-    this.url = uploader.options.url;
+    this.url = options.url || uploader.options.url;
   }
 
   public upload():void {
